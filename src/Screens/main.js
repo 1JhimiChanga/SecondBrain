@@ -1,7 +1,12 @@
 import React from 'react'
 
+// Components
+import TopNav from "../Components/NavigationBars/topNav";
+
 export default function main() {
     return (
-        <div>Hello</div>
+        <div>
+            <TopNav />
+        </div>
     )
 }
