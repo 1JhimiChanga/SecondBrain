@@ -1,0 +1,57 @@
+
+html {
+    background-image: linear-gradient(to right, #94b0da, #dcedff);
+    margin: 150px auto 0 auto;
+}
+.registerFormContainer{
+    font-family:'Roboto', serif;
+    display: inline-block;
+    background-color: #FAF9F6;
+    height: 600px;
+    width: 600px;
+    border-radius: 25% 10%;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.companyInfoContainer{
+    text-align: center;
+    color: #FAF9F6;
+}
+
+.companyInfoText{
+    margin-top: -100px;
+}
+.companyInfoSingleText{
+    margin-bottom: 13px !important;
+}
+.formInput{
+    width: 80%;
+    margin-left: 10% !important;
+    margin-top: 3% !important;
+}
+.registerButton{
+    border: none !important;
+    color: #dcedff !important;
+    padding: 10px 20px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 10% 2px 0 63% !important;
+    cursor: pointer !important;
+    border-radius: 16px !important;
+    background-color: #91b0da !important;
+}
+
+.aboutUsButton{
+    border: none !important;
+    color: #94b0da !important;
+    padding: 10px 20px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    border-radius: 16px !important;
+    background-color: #dcedff !important;
+}
+
