@@ -1,18 +1,21 @@
-const { modalUnstyledClasses } = require("@mui/material");
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
-const Schema = mongoose.Scheme;
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     {
         name: {
-            type: String
+            type: String,
+            
         },
         username: {
-            type: String
+            type: String,
+            unique: true,
+            
         },
         email: {
-            type: String
+            type: String,
+            unique: true,
         },
         password : {
             type: String
