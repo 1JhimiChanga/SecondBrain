@@ -6,8 +6,8 @@ import Footer from "../../Components/Footer/footer"
 
 export default function Register() {
   return (
-    <div id="content" >
-      <Grid container spacing={2}>
+    <div >
+      <Grid className="entireGrid" container spacing={2}>
         <Grid item md={1} />
         <Grid className='companyInfoContainer' item md={5}>
           <img src="/images/SecndBrain-removebg-preview_resize.png" alt="Wait for logo.."></img>
