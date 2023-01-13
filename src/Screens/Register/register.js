@@ -1,7 +1,8 @@
 import React from 'react'
 import { TextField, Typography, Grid, Button, FormGroup } from '@mui/material'
-import { Form } from 'react-router-dom'
+import { Form, Link } from 'react-router-dom'
 import "./register_styles.css"
+import Footer from "../../Components/Footer/footer"
 
 export default function Register() {
   return (
@@ -10,18 +11,18 @@ export default function Register() {
         <Grid item md={1} />
         <Grid className='companyInfoContainer' item md={5}>
           <img src="/images/SecndBrain-removebg-preview_resize.png" alt="Wait for logo.."></img>
-          <div style={{ fontFamily: "Poppins" }} className='companyInfoText'>
-            <Typography className='companyInfoSingleText' variant='h3'>Join Us</Typography>
-            <Typography className='companyInfoSingleText' variant='h6'>Find your second brain and be twice as productive!</Typography>
+          <div className='companyInfoText'>
+            <Typography style={{fontFamily: "Poppins"}} className='companyInfoSingleText' variant='h3'>Welcome to Your Secnd<span className="brainText">Brain</span></Typography>
+            <Typography style={{fontFamily: "Poppins"}} className='companyInfoSingleText' variant='h6'>Find your second brain and be twice as productive!</Typography>
             <Button className='aboutUsButton' variant='outlined'>About Us</Button>
           </div>
 
         </Grid>
 
         <Grid item md={4} className="registerFormContainer">
-          <Typography style={{ fontFamily: "Poppins" }} variant='h2'>Register Here!</Typography>
+          <Typography style={{ fontFamily: "Poppins", marginTop: "30px" }} variant='h2'>Register Here!</Typography>
 
-          <FormGroup>
+          <FormGroup className="formGroup1">
             <TextField className='formInput'
               label="Name"
             />
@@ -37,11 +38,15 @@ export default function Register() {
 
           </FormGroup>
           <Button variant='contained' className='registerButton'>Register</Button>
+          <Typography>Already have an account?</Typography>
+          <Link>Login now!</Link>
         </Grid>
+
+        
 
       </Grid>
 
-
+    <Footer />
 
     </div >
   )
