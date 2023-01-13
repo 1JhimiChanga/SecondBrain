@@ -28,7 +28,6 @@ Pre-conditions: Requires name, username, email, password.
 Post-condition: Successfully adds one new user the the User Collection.
 */
 router.route('/add').post((req, res) => {
-    const name = req.body.name;
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
@@ -43,7 +42,6 @@ router.route('/add').post((req, res) => {
                     // Username and email are not in use
                     // Now creates a new user
                     const newUser = new User.UserCollection({
-                        name : name,
                         username : username,
                         email : email,
                         password : password
