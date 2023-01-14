@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap");
-html {
-    background-image: linear-gradient(to right, #94b0da, #dcedff);
-    margin: 0 auto 0 auto;
-}
+
 
 .entireGrid{
     margin-top: 6% !important;
@@ -16,7 +13,7 @@ html {
     border-radius: 25% 10%;
     text-align: center;
     opacity: 1.0;
-    box-shadow: 10px 10px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.7);;
 }
 
 .formGroup1{
