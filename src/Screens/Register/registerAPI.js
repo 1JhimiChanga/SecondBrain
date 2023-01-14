@@ -75,7 +75,7 @@ const checkUsername = function (thisUsername, callback) {
  * @param {Callback Function} callback - The callback function that will be used to make use of the response.
  */
 const checkEmail = function (thisEmail, callback) {
-    axios.post("http://localhost:5000/user/checkUsername", {
+    axios.post("http://localhost:5000/user/checkEmail", {
         email: thisEmail
     })
         .then((res) => {

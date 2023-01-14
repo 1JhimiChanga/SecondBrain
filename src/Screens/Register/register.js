@@ -48,6 +48,37 @@ export default function Register() {
   };
 
   const onSubmit = () => {
+    let validated = true;
+    const passwordTest = checkPassword(password, confirmPassword)
+
+    checkUsername(username, function (response) {
+      if (response === "success") {
+        setUsernameError({ error: false, message: "" })
+      } else {
+        setUsernameError({ error: true, message: "*This username is already in use." })
+        validated = false;
+      }
+    })
+
+    checkEmail(email, function (response) {
+      if (response === "success") {
+        setEmailError({ error: false, message: "" })
+      } else {
+        setEmailError({ error: true, message: "*This email is already in use" })
+        validated = false;
+      }
+    })
+
+    if (passwordTest !== "success") {
+      setPasswordError({ error: true, message: passwordTest })
+      validated = false;
+    } else {
+      setPasswordError({ error: false, message: "" })
+    }
+
+    if (validated) {
+      addUser(username, email, password)
+    }
 
   }
 
@@ -90,6 +121,7 @@ export default function Register() {
               label="Password"
               value={password}
               onChange={(e) => handleTextChange("password", e)}
+              type="password"
             />
             <TextField className='formInput'
               error={passwordError.error}
@@ -97,6 +129,8 @@ export default function Register() {
               label="Confirm Password"
               value={confirmPassword}
               onChange={(e) => handleTextChange("confirmPassword", e)}
+              type="password"
+
 
             />
           </FormGroup>
