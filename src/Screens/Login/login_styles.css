@@ -1,0 +1,23 @@
+.loginFormContainer{
+    display: inline-block;
+    background-color: #FAF9F6;
+    height: 600px;
+    border-radius: 25% 10%;
+    text-align: center;
+    opacity: 1.0;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.7);;
+}
+
+.loginFormGroup{
+    margin-top: 5%;
+}
+
+.guessText{
+    color: red;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+.statementText{
+    margin-top: 20%;
+    margin-left: 100px;
+}

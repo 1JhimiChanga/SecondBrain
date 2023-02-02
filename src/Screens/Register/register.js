@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { TextField, Typography, Grid, Button, FormGroup } from '@mui/material'
-import { Form, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import "./register_styles.css"
-import Footer from "../../Components/Footer/footer"
 import { addUser, checkPassword, checkUsername, checkEmail } from './registerAPI'
 
 export default function Register() {
-  //= Input States
+  // Input States
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,6 +25,11 @@ export default function Register() {
     message: ""
   })
 
+  /**
+   * @description Handles the state of all the input texts (username, email, password, and confirmPassword)
+   * @param {String} textType - The input text that should be handled/changed. 
+   * @param {*} e - The event that triggered this function (should be onChange)
+   */
   const handleTextChange = (textType, e) => {
     const text = e.target.value;
     switch (textType) {
@@ -47,23 +51,30 @@ export default function Register() {
     }
   };
 
+  /**
+   * @description Handles validation and creation of a user to the database.
+   */
   const onSubmit = () => {
     let validated = true;
     const passwordTest = checkPassword(password, confirmPassword)
 
+    // Changes error message depending on response. 
     checkUsername(username, function (response) {
       if (response === "success") {
         setUsernameError({ error: false, message: "" })
       } else {
+        // response is "existUsernameError" if username is already in use.
         setUsernameError({ error: true, message: "*This username is already in use." })
         validated = false;
       }
     })
 
+    // Changes error message depending on response. 
     checkEmail(email, function (response) {
       if (response === "success") {
         setEmailError({ error: false, message: "" })
       } else {
+        // response is "existEmailError" if username is already in use.
         setEmailError({ error: true, message: "*This email is already in use" })
         validated = false;
       }
@@ -76,6 +87,7 @@ export default function Register() {
       setPasswordError({ error: false, message: "" })
     }
 
+    // If validated is still true after going through validation. Add the user.
     if (validated) {
       addUser(username, email, password)
     }
@@ -130,8 +142,6 @@ export default function Register() {
               value={confirmPassword}
               onChange={(e) => handleTextChange("confirmPassword", e)}
               type="password"
-
-
             />
           </FormGroup>
 
@@ -141,13 +151,9 @@ export default function Register() {
             className='registerButton'
           >Register</Button>
           <Typography>Already have an account?</Typography>
-          <Link>Login now!</Link>
+          <Link to="/login">Login now!</Link>
         </Grid>
-
-
-
       </Grid>
-
     </div >
   )
 }
